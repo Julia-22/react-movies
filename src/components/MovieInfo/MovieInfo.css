@@ -1,0 +1,93 @@
+.Movie_information{
+  padding: 0 120px;
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.Movie_information img{
+  max-height: 540px;
+}
+
+.poster_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 360px;
+  max-height: 540px;
+  background-color: rgb(40, 42, 53);
+  border: dashed 3px rgba(163, 162, 162, 0.521); 
+  border-radius: 15px;
+  color: rgba(255, 255, 255, 0.726);
+  font-size: 22px;
+
+}
+
+.movie_details{
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  color: white;
+}
+
+.movie_details h1{
+  font-size: 44px;
+  letter-spacing: 2px;
+}
+
+.tags_container p{
+  font-size: 14px;
+  color: rgb(185, 182, 182);
+}
+
+.rating{
+  display: flex;
+  margin: 15px 0;
+}
+
+.rating p{
+  margin-left: 20px;
+  font-size: 20px;
+  color: rgb(231, 164, 63);
+}
+
+.overview_container h2{
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.overview_container p{
+  line-height: 2;
+  color:rgb(185, 182, 182);
+  font-size: 14px;
+}
+
+.cast_container h2{
+  margin: 15px 0;
+  font-size: 20px;
+}
+
+.cast_container button{
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background-color: rgb(54, 54, 54);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.review_button{
+  width: 130px;
+  height: 50px;
+  background-color: rgb(40, 42, 53);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.review_note{
+  color:rgb(121, 120, 120);
+}

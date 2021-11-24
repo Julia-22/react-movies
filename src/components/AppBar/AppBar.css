@@ -1,0 +1,70 @@
+.main_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.AppBar_container{
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.AppBar__link{
+  margin-right: 50px;
+  text-decoration: none;
+  font-size: 34px;
+  font-weight: 700;
+  color: white;
+}
+
+.Search_form{
+  margin-right: auto;
+  margin-top: 5px;
+}
+
+button{
+  width: 120px;
+  height: 45px;
+  background-color: rgb(40, 42, 53);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.genresList{
+  position: absolute;
+  top: 80px;
+  right: 80px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  width: 380px;
+  padding: 30px 40px;
+
+  color: white;
+  font-size: 16px;
+  background-color: rgb(40, 42, 53);
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.genresList li{
+  height: 35px;
+  padding-left: 20px;
+  display: flex;
+  align-items:center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.genresList li:hover,
+.genresList li:focus{
+  background-color: rgb(66, 67, 70);
+}

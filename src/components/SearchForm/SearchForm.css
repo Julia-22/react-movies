@@ -1,0 +1,54 @@
+.Search_form {
+  background: none;
+  border-radius: 200px;
+  height: 2.5rem;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  transition: all .75s ease-in-out;
+}
+
+.Search_form svg{
+  fill: white;
+}
+
+.search__text {
+  border: 0;
+  background: transparent;
+  outline: 0;
+  color: white;
+  float: left;
+  line-height: 2.5rem;
+  width: 0;
+  transition: all .5s ease-in-out;
+  font-size: .8rem;
+}
+
+.search__button {
+  color: black;
+  background: rgb(44, 45, 87);
+  border-radius: 50%;
+  float: right;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all .5s ease-in-out;
+  border: none;
+}
+
+.Search_form:hover {
+  background: #1f1a33;
+  width: 400px;
+}
+
+.Search_form:hover > .search__text {
+  width: 340px;
+  margin-left: 1rem;
+}
+
+.Search_form:hover > .search__button {
+  transform: scale(0.75);
+}

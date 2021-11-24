@@ -1,0 +1,8 @@
+.NoInfo{
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: 900;
+  color: white;
+}

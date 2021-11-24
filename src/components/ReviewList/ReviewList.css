@@ -1,0 +1,26 @@
+.reviewsList_container{
+  color: white;
+}
+
+.reviewsList_container li{
+  padding: 25px;
+  margin-bottom: 25px;
+  background-color: rgb(40, 42, 53);
+  border-radius: 10px;
+}
+
+.review_info .author{
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.review_info .date{
+  color: rgb(185, 182, 182);
+  font-size: 12px;
+}
+
+.review{
+  margin-top: 15px;
+  font-size: 14px;
+}
