@@ -6,7 +6,6 @@ import selectors from '../../redux/movies/selectors';
 import operations from '../../redux/movies/operations';
 import actions from '../../redux/movies/actions';
 import SearchForm from '../SearchForm/SearchForm';
-import CustomLink from '../CustomLink/CustomLink';
 import { compose } from 'redux';
 
 

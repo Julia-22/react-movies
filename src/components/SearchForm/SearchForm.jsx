@@ -6,7 +6,8 @@ function SearchForm({ handleSearch, handleInputChange, query }) {
       <input
         className="search__text"
         placeholder="Type to search for something"
-        type="text" value={query}
+        type="text"
+        value={query}
         onChange={handleInputChange}
       />
       <button

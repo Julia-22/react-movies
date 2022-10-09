@@ -1,6 +1,8 @@
 .movies_list{
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 1.2rem;
   justify-content: space-between;
 }
 

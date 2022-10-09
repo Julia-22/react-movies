@@ -1,39 +1,45 @@
 import React, {Component} from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import MovieInfo from '../components/MovieInfo/MovieInfo';
 
+import MovieInfo from '../components/MovieInfo/MovieInfo';
 import selectors from '../redux/movies/selectors';
 import operations from '../redux/movies/operations';
 import CastList from '../components/CastList/CastList';
 import ReviewList from '../components/ReviewList/ReviewList';
-import CustomLink from '../components/CustomLink/CustomLink';
 import NoInfo from '../components//NoInfo/NoInfo';
 
 class MovieDetailsPage extends Component{
+  constructor() {
+    super();
+    this.timer = null;
+  }
+  
   componentDidMount() {
-    this.props.getMovieDetail(this.props.match.params.movieId);
-    this.props.getCast(this.props.match.params.movieId);
-    this.props.getReviews(this.props.match.params.movieId);
+    const { movieId } = this.props.match.params;
+    this.props.getMovieDetail(movieId);
+    this.props.getCast(movieId);
+    this.props.getReviews(movieId);
+  }
+
+  componentDidWillUnmount() {
+    clearTimeout(this.timer);
   }
 
   handleScroll = () => {
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.refs.scrollRef.scrollIntoView({behavior: 'smooth'});
     }, 0);
   }
 
   render() {
-    const { movie, cast, reviews, location, isDisabled } = this.props;
+    const { movie, cast, reviews, isDisabled } = this.props;
     const castToView = cast.slice(0, 5);
-    if (isDisabled) {
-      return (
-        <NoInfo/>
-      )
-    }
-    return (
-      <>
-        {movie && <MovieInfo handleScrollToCast={this.handleScroll} handleScroolToReviews={this.handleScroll}  movie={movie} cast={cast} castToView={castToView} reviews={reviews}  />}
+
+    return (isDisabled
+      ? <NoInfo />
+      : <>
+        {movie && <MovieInfo handleScrollToCast={this.handleScroll} handleScroolToReviews={this.handleScroll} movie={movie} cast={cast} castToView={castToView} reviews={reviews} />}
 
         {cast &&
           <div className="main_container" ref="scrollRef">

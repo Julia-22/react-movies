@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import CustomLink from '../CustomLink/CustomLink';
-import { Rating, RatingView } from 'react-simple-star-rating';
-import './MoviesList.css';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import operations from '../../redux/movies/operations';
-import selectors from '../../redux/movies/selectors';
 import { compose } from 'redux';
+import { RatingView } from 'react-simple-star-rating';
+
+import './MoviesList.css';
+import CustomLink from '../CustomLink/CustomLink';
+import operations from '../../redux/movies/operations';
 import actions from '../../redux/movies/actions';
 
 function getRandomInt(max) {
@@ -23,6 +23,7 @@ const gradientList = [
 ];
 
 class MoviesList extends Component {
+
   componentDidMount() {
     const searchQuery = new URLSearchParams(this.props.location.search).get('query') || '';
     const genreFilter = new URLSearchParams(this.props.location.search).get('id') || '';
@@ -36,20 +37,23 @@ class MoviesList extends Component {
 
   render() {
     const { movies, location, resetMovieDetails } = this.props;
+
     return (
       <ul className="movies_list">
         {movies.length > 0 && movies.map((el, i) => (
-          <CustomLink pathname={`/movies/${el.id}`} from={location} key={i} onClick={() => resetMovieDetails()}>
-            <div className="movie_item" style={{ backgroundImage: gradientList[getRandomInt(gradientList.length - 1)] }}>
-              <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}>
-                
-                <img src={`https://image.tmdb.org/t/p/w300${el.poster_path}`} alt={el.name || el.original_title} />
-                
-                <h2>{el.name || el.original_title}</h2>
-                <RatingView ratingValue={+el.vote_average / 2} size={15} />
+          <li>
+            <CustomLink pathname={`/movies/${el.id}`} from={location} key={i} onClick={() => resetMovieDetails()}>
+              <div className="movie_item" style={{ backgroundImage: gradientList[getRandomInt(gradientList.length - 1)] }}>
+                <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}>
+                    
+                  <img src={`https://image.tmdb.org/t/p/w300${el.poster_path}`} alt={el.name || el.original_title} />
+                    
+                  <h2>{el.name || el.original_title}</h2>
+                  <RatingView ratingValue={+el.vote_average / 2} size={15} />
+                </div>
               </div>
-            </div>
-          </CustomLink>
+            </CustomLink>
+          </li>
         ))}
       </ul>
     );
